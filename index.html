@@ -1,0 +1,51 @@
+<html>
+<header><title>OAuth2 - Sample client</title></header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+</script>
+
+<body>
+<script>
+	
+	$(document).ready(function() { 
+
+   		if (getUrlParameter("token")) { // There is token, lets request data
+
+   		} else if (getUrlParameter("code")) { // There is code, lets get token
+
+        // Flow processing cannot continue this point, due to the CORS
+        // doesn't help now going down this road anymore, as WM API will
+        // be sending the Access-Control-Allow-Origin header.
+
+   			var accessCode = getUrlParameter("code");
+   			alert("Access code is: " + accessCode);
+			$.post("http://localhost:1234/token", {
+			        code: accessCode
+			    },
+			    function(data, status) {
+			        alert("Data: " + data + "\nStatus: " + status);
+			    });
+
+   		} else { // Initial step: request access code
+   			window.location.replace("https://www.linkedin.com/oauth/v2/authorization?client_id=ClientIDProvidedByLinkedin&response_type=code&redirect_uri=http%3A%2F%2Fwww.carriedo.es%2Flinkedin%2Foauth2Callback&state=fdasverqwfadsy53wtehrg");
+   		}
+
+	}); 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "wmoauthsampleclient",
+  "version": "0.0.1",
+  "description": "Workmarket sample client to show off OAuth use cases.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Workmarket",
+    "OAuth",
+    "client",
+    "sample"
+  ],
+  "author": "Francisco Carriedo Scher",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
