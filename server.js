@@ -1,6 +1,4 @@
-// Dummy proxy to by pass the CORS policy in browsers
-// WM shouldn't need it, we will be sending the Access-Control-Allow-Origin
-// header to enable browsers to make cross origin requests. 
+// Dummy server to simulate 3rd parties server side
 
 var express = require('express');
 var app = express();
@@ -30,7 +28,7 @@ var options = {
 var PORT = 9000;
 // viewed at http://localhost:<PORT>
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/auth_Webapp_sample.html'));
 });
 
 app.post('/token', function(req, res) {
@@ -47,7 +45,6 @@ app.get('/oauthcb', function(req, res) {
     res.send("Code received...");
     console.log("Your access code is: " + req.query.code);
 });
-
 
 app.listen(PORT);
 console.log("Server listening at port " + PORT);

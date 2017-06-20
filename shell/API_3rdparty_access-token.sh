@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: complete this script once the flow is checked on the server side.
+
 JWT_HEADER=`./tryauth.sh | python -m json.tool | grep jwt | cut -f"2" -d":" | cut -f"1" -d"," | sed "s/\"//g"`
 echo
 echo $JWT_HEADER
