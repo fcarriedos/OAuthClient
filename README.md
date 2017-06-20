@@ -38,7 +38,7 @@ Build and run instructions
 
 # Shell
 
-The scripts yield verbose output including the full requests and responses with their headers, enough to transparently the OAuth flow with full detail. Execute:
+The scripts yield verbose output including the full requests and responses with their headers, enough to transparently show case the OAuth + JWT flow with full detail. Execute:
         
  * `API_3rdparty_access-code.sh`: to see the requests and result needed for 3rd party access to WM resources.
  * `API_3rdparty_access-token.sh` (incomplete): to see the requests and result needed for 3rd party access to WM resources, getting directly a token without the code step in the flow.
