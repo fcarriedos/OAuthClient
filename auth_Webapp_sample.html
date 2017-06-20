@@ -1,0 +1,15 @@
+<html>
+<header><title>OAuth2 - Sample client</title></header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<body>
+<!-- TODO: implement the logic for login in as the Website. -->
+<form action="/oauth/token" method="POST" enctype="application/json">
+    <input type="hidden" name="response_type" value="token">
+    <input type="hidden" name="grant_type" value="password">
+    user<input type="text" name="username" autofocus="true"><br/>
+    pass<input type="password" name="password"><br/>
+    <button type="submit" value="Submit">Submit</button>
+</form>
+</body>
+</html>

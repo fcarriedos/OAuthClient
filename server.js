@@ -12,6 +12,9 @@ var path = require('path');
 const https = require('https');
 var request = require('request');
 
+const LINKEDIN_CLIENT_ID = '78bjaadposy8ya';
+const LINKEDIN_CLIENT_SECRET = '78bjaadposy8ya';
+
 var options = {
     url: 'https://www.linkedin.com/oauth/v2/accessToken',
     method: 'POST',
@@ -19,12 +22,12 @@ var options = {
 	   grant_type: 'authorization_code',
 	   code: '',
 	   redirect_uri: 'http://www.carriedo.es/linkedin/oauth2Callback',
-	   client_id: 'ClientIDProvidedByLinkedin',
-	   client_secret: 'ClientSecretProvidedByLinkedin'      
+	   client_id: LINKEDIN_CLIENT_ID,
+	   client_secret: LINKEDIN_CLIENT_SECRET      
 	}
 }
 
-var PORT = 1234;
+var PORT = 9000;
 // viewed at http://localhost:<PORT>
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
@@ -40,5 +43,14 @@ app.post('/token', function(req, res) {
 	});
 });
 
+app.get('/oauthcb', function(req, res) {
+    res.send("Code received...");
+    console.log("Your access code is: " + req.query.code);
+});
+
+
 app.listen(PORT);
 console.log("Server listening at port " + PORT);
+
+
+
