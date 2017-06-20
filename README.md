@@ -7,6 +7,7 @@ This project will be updated as the OAuth implementation progresses in Workmarke
 
 NOTE: the JS client flow is incomplete, given that Linkedin does not allow CORS.
 
+
 NOTES
 -----
 
