@@ -1,20 +1,19 @@
 # OAuthClient
-Javascript OAuth client to demonstrate OAuth functionality at Workmarket
+OAuth clients to demonstrate OAuth functionality at Workmarket
 
-Sample Javascript client, to demonstrate, WM OAuth functionality.
-
-Working against Linkedin OAuth service.
+Sample Javascript and Shell clients, to demonstrate, WM OAuth functionality.
 
 This project will be updated as the OAuth implementation progresses in Workmarket.
 
-NOTE: the flow is incomplete, given that Linkedin does not allow CORS.
+NOTE: the JS client flow is incomplete, given that Linkedin does not allow CORS.
 
 Prerrequisites
 --------------
 
-· NodeJS.
-· Curl, Wget or web browser.
-· Access to command line.
+ * Shell (bash, sh, zsh).
+ * NodeJS.
+ * Curl, Wget or web browser.
+ * Access to command line.
 
 
 Build and run instructions
@@ -24,12 +23,22 @@ Build and run instructions
 
 2) Open terminal, go to the project's folder.
 
-3) Run:
+# Shell
+
+The scripts yield verbose output including the full requests and responses with their headers, enough to transparently the OAuth flow with full detail. Execute:
+        
+ * `API_3rdparty_access-code.sh`: to see the requests and result needed for 3rd party access to WM resources.
+ * `API_3rdparty_access-token.sh` (incomplete): to see the requests and result needed for 3rd party access to WM resources, getting directly a token without the code step in the flow.
+ * `WebApp_Login.sh`: to see the requests and result to get logged in the web application.
+
+# Javascript
+
+1) Run:
 
         $ node server.js
 
-4) Optional, but useful: open broswer's developer console (Firebug or similar)(
+2) Optional, but useful: open broswer's developer console (Firebug or similar)(
    and check network traffic. This will allow you to see the OAuth flow live, which
    is not that evident just watching the browser's screen.
 
-5) Visit http://localhost:1234/
+3) Visit http://localhost:1234/
